@@ -1,0 +1,363 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="container">
+
+  <div class="holder">
+
+    <div class="left-pane">
+
+      <table style="width: 100%;">
+        <tr>
+          <td colspan="3" style="text-align: center;">
+            <h2>Booking Summary</h2>
+          </td>
+
+          <td>
+          </td>
+
+          <td>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3" style="text-align: left;">
+            <b>Personal Information Summary</b>
+          </td>
+
+          <td>
+          </td>
+
+          <td>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align: left;  width: 140px;">
+            Name
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 8px;">
+            {{ name }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Surname
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 8px;">
+            {{ surname }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Email Address
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 8px;">
+            {{ email }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Phone
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 8px;">
+            {{ phone }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Gender
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 8px;">
+            {{ gender }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Travelling for work?
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 8px;">
+            {{ travel }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Booking for ?
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 8px;">
+            {{ booking }}
+          </td>
+
+        </tr>
+      </table>
+
+      <table style="width: 100%;">
+
+        <tr>
+          <td colspan="3" style="text-align: left;">
+            <b>Booking Information Summary</b>
+          </td>
+
+          <td>
+          </td>
+
+          <td>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align: left; width: 140px;">
+            Check-in
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            {{ check_in | date:'MMM dd, yyyy' }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Check-out
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            {{ check_out | date:'MMM dd, yyyy' }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Number of Adults
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            {{ people }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Number of Children
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            {{ children }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            How Many Rooms?
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            {{ room }}
+          </td>
+
+        </tr>
+      </table>
+
+      <table style="width: 100%;">
+
+        <tr>
+          <td colspan="3" style="text-align: left;">
+            <b>Payment Information Summary</b>
+          </td>
+
+          <td>
+          </td>
+
+          <td>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align: left; width: 140px;">
+            Price
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            R{{ price }}.00
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Number of Days
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            {{ number_of_days }}
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Overall Room Price
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            R{{ final_price }}.00
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            Tax
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            15%
+          </td>
+
+        </tr>
+
+        <tr>
+          <td style="text-align: left;">
+            <h5>Total</h5>
+          </td>
+
+          <td style="text-align: left; border-left: white solid 1px; padding-left: 16px;">
+            <h5>R{{ total }}.00</h5>
+          </td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <div class="form-content">
+
+      <div>
+        <div>
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+            <div class="login-holder">
+              <div class="login-sub-holder">
+
+                <div>
+                  <h2 style="color: green; text-align: center;">Complete Payment</h2>
+                  <div style="border-bottom: solid white; border-bottom-color: whitesmoke; width: 230px;"></div>
+                </div>
+
+                <div>
+                  <table>
+                    <tr>
+
+                      <td>
+                        <img src="assets/visa_card.png" alt="Smiley face" height="32" width="42">
+                      </td>
+
+                      <td>
+                        <img src="assets/visa_only.png" alt="Smiley face" height="32" width="42">
+                      </td>
+
+                      <td>
+                        <img src="assets/master_card.jpg" alt="Smiley face" height="32" width="42">
+                      </td>
+
+                    </tr>
+                  </table>
+                </div>
+
+                <div>
+                  <div class="form-group" style="justify-content: left; margin-top: 16px;" class="l-top">
+                    <label>Card Number</label>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="form-group" class="l-top">
+                    <input type="number" #refName style="width: 128px;" placeholder="0000 0000 0000 0000" class="form-group" formControlName="card_number">
+                  </div>
+                </div>
+
+                <div>
+                  <div class="form-group" style="justify-content: left; margin-top: 16px;" class="l-top">
+                    <label>Expiration Date</label>
+                  </div>
+                </div>
+
+                <div>
+                  <select id="month" class="form-group" class="form-control" formControlName='month'>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+
+                  <select id="year" class="form-group" class="form-control" formControlName='year'>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                  </select>
+                </div>
+
+                <div>
+                  <div class="form-group" style="justify-content: left; margin-top: 16px;" class="l-top">
+                    <label>CCV</label>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="form-group" class="l-top">
+                    <input type="number" #refName style="width: 125px;" placeholder="123" class="form-group" formControlName="card_ccv">
+                  </div>
+                </div>
+
+                <div class="form-group" class="l-top">
+                  <a routerLink="/prev-bookings" (click)="onSubmit()">
+                  <button type="submit" [disabled]="!userForm.valid" class="button-style" style="background: whitesmoke; color: grey; margin-top: 16px;">Pay</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

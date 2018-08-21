@@ -1,0 +1,251 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="container">
+
+  <div class="holder">
+
+    <div class="left-pane">
+
+    </div>
+
+    <div class="form-content">
+
+      <div>
+
+        <table class="table-style">
+
+          <div style="height: 100px; width: 250px; position: relative;">
+
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+              <tr>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <label>Name</label>
+                    <input type="text" #refName class="form-group" formControlName="name">
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <label>Surname</label>
+                    <input type="text" class="form-group" formControlName="surname">
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <label>Email</label>
+                    <input type="email" class="form-group" formControlName="email">
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <label>Phone</label>
+                    <input type="tel" class="form-group" formControlName="phone" style="align-items: right;">
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="align-items: center;">
+                  <div class="form-group" class="l-top">
+                    Gender
+                  </div>
+                </td>
+                <div class="form-group" class="l-top">
+                  <select id="gender" class="form-control" formControlName='gender'>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <td>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="l-top">
+                    Are you travelling for work?
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <input type="radio" class="form-control" formControlName='travel' value="Yes" checked> Yes
+                    <input type="radio" class="form-control" formControlName='travel' value="No"> No
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="l-top">
+                    Who are you booking for?
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <input type="radio" class="form-control" formControlName='booking' value="Myself" checked> Myself
+                    <input type="radio" class="form-control" formControlName='booking' value="Someone"> Someone
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+
+                <td colspan="2" style="border-bottom: cadetblue solid 2px; width: 100%; margin-left: -100px; margin-right: -100px;">
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <label>Check-in</label>
+                    <input type="date" #refName class="form-group" min="1979-12-31" formControlName="check_in">
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <label>Check-out</label>
+                    <input type="date" #refName class="form-group" max="2050-12-31" formControlName="check_out">
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <select id="people" class="form-control" formControlName='people'>
+                      <option value="2 Adults">2 Adults</option>
+                      <option value="3 Adults">3 Adults</option>
+                      <option value="4 Adults">4 Adults</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <select id="children" class="form-control" formControlName='children'>
+                      <option value="No children">No Children</option>
+                      <option value="1 Child">1 Child</option>
+                      <option value="2 Children">2 Children</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <select id="room" class="form-control" formControlName='room'>
+                      <option value="1 Room">1 Room</option>
+                      <option value="2 Rooms">2 Rooms</option>
+                      <option value="3 Rooms">3 Rooms</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                </td>
+                <td>
+                  <div class="form-group" class="l-top">
+                    <a routerLink="/finish" (click)="onSubmit()">
+                      <button type="submit" [disabled]="!userForm.valid" class="button-style">Submit</button>
+                    </a>
+                  </div>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+            </form>
+
+          </div>
+
+        </table>
+
+      </div>
+
+
+
+
+
+      <!-- <form [fromGroup]="userForm" (ngSubmit)="onSubmit()">
+  
+        <table class="table-style">
+         
+          <tr> -->
+      <!-- <td>Title <app-my-inputs placeholder="Name">  </app-my-inputs></td>   -->
+      <!-- <td>Name
+                <input type="text" class="form-control" formControlName='name'>
+                <div [hidden]="nameRef.valid || nameRef.pristine" class="alert alert-danger">
+                  Please enter a name
+                </div> -->
+      <!-- <app-my-inputs placeholder="Name"> </app-my-inputs> -->
+      <!-- </td>
+            <td>Surname
+                <input type="text" class="form-control" formControlName='surname'> -->
+      <!-- <app-my-inputs placeholder="Surname"> Hello </app-my-inputs> -->
+      <!-- </td>
+          </tr>
+  
+          <tr>
+            <td>Email Address
+                <input type="email" class="form-control" formControlName='email'> -->
+      <!-- <app-my-inputs placeholder="Email"> Hello </app-my-inputs> -->
+      <!-- </td> -->
+      <!-- <td>Phone Number
+                <input type="tel" class="form-control" formControlName='phone'> -->
+      <!-- <app-my-inputs placeholder="Email"> Hello </app-my-inputs> -->
+      <!-- </td>
+          </tr>
+  
+          <tr>
+              <td>
+                Are you travelling for work?
+              </td>
+              <td>
+                <input type="radio" class="form-control" formControlName='travel' value="yes" checked> Yes
+                <input type="radio" class="form-control" formControlName='travel' value="no"> No
+              </td>
+            </tr>
+  
+            <tr>
+                <td>
+                  Who are you booking for?
+                </td>
+      
+                <td>
+                    <input type="radio" class="form-control" formControlName='booking' value="me" checked> Myself
+                    <input type="radio" class="form-control" formControlName='booking' value="someone"> Someone
+                </td>
+              </tr>
+  
+          <tr>
+            <td>
+              <label for="gender">Gender</label>
+              <select id="gender" class="form-control" formControlName='gender'>
+                <option value="m">Male</option>
+                <option value="f">Female</option>
+                <option value="o">Other</option>
+              </select>
+            </td> -->
+      <!-- <td>
+              Birthday:
+              <input type="date" name="bday">
+            </td> -->
+
+      <!-- </tr> -->
+
+      <!-- <button type="submit" > Submit</button> -->
+
+      <!-- <app-my-button></app-my-button> -->
+
+      <!-- </table>
+  
+      </form> -->
+
+    </div>
+
+  </div>
+
+</div>
